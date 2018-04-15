@@ -13,7 +13,7 @@ class Search : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    private lateinit var dataset: ArrayList<Pair<String, String>>
+    private lateinit var dataset: ArrayList<Pair<Point, String>>
     private lateinit var words: Words
 
     override fun onCreate(savedInstanceState: Bundle?) {
