@@ -10,6 +10,7 @@
 
     osmosis --read-pbf-fast file="arnsberg-regbez-latest.osm.pbf" --bounding-polygon file="Dortmund.poly" --write-xml file="Dortmund.osm"
 
+
 ## Haltestellen
 
     osmfilter Dortmund.osm --keep="public_transport=stop_position or =station or =platform or =stop_area" --ignore-dependencies --drop-relations | osmconvert --csv="name" - | sort | uniq | jq -R '[.]' | jq -s -c 'add' | sed -e "s/^/{ \"words\" :/" -e "s/\$/}/" > dsw21.json
@@ -25,3 +26,4 @@
 # Credits
 
 POI symbol by Picol from flaticon: https://www.flaticon.com/free-icon/point-of-interest_14738 (CC-BY)
+Straßen, Haltestellen und Ortsnamen von Open Street Maps (ODbL)
